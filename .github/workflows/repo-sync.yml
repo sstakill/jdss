@@ -24,11 +24,11 @@ jobs:
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/wuzhi01/MyActions.git"
+          source_repo: "https://gitee.com/shuye72/MyActions.git"
           source_branch: "main"
           destination_branch: "main"
           github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
-      # 我自己同步到gitee使用，其他人可忽略
+      # 我自己同步到gitee使用，其他人可忽https://github.com/wuzhi01/MyActions.git略
       - name: sync github -> gitee
         uses: Yikun/hub-mirror-action@master
         if: env.dst_key
